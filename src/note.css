@@ -11,6 +11,11 @@
   box-sizing: border-box;
   overflow: hidden;
   padding: 0 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.note-container:hover {
+  box-shadow: 5px 5px 20px lightgray;
 }
 
 h3 {
@@ -24,5 +29,6 @@ p {
   width: 100%;
   height: 80%;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }

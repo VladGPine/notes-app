@@ -1,7 +1,8 @@
 .note-container {
+  position: relative;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
   width: 300px;
   height: 300px;
   font-family: 'Roboto', sans-serif;
@@ -9,7 +10,7 @@
   margin-top: 30px;
   border-radius: 4px;
   box-sizing: border-box;
-  overflow: hidden;
+  /* overflow: hidden; */
   padding: 0 20px;
   transition: all 0.3s ease-in-out;
 }
@@ -20,15 +21,77 @@
 
 h3 {
   width: 100%;
-  height: 20%;
+  height: 60px;
   font-size: 22px;
   border-bottom: 1px solid lightgray
 }
 
 p {
   width: 100%;
-  height: 80%;
+  height: 100px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+/*  Buttons  */
+
+.note-btn {
+  width: 80px;
+  height: 20px;
+  color: #fff;
+  background-color: whitesmoke;
+  border: none;
+  box-shadow: 2px 2px 8px lightgray;
+  transition: all 0.2s ease-in-out;
+}
+
+.note-btn:hover {
+  box-shadow: 3px 3px 14px lightgray;
+}
+
+/* .note-btn:first-child {
+  margin-right: 20px;
+} */
+
+.edit-btn {
+  background-color: rgb(152, 171, 253);
+}
+
+.delete-btn {
+ display: none;
+ cursor: pointer;
+}
+
+.note-container:hover .delete-btn {
+  display: block;
+  position: absolute;
+  top: -20px;
+  left: 280px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(245, 186, 186);
+  z-index: 100;
+}
+
+
+
+.delete-btn span {
+  position: absolute;
+  top: 50%;
+  left: 36%;
+  width: 12px;
+  height: 2px;
+  background-color: whitesmoke;
+  transform: rotate(135deg);
+}
+
+.delete-btn span::before {
+  content: '';
+  display: block;
+  width: 12px;
+  height: 2px;
+  background-color: whitesmoke;
+  transform: rotate(90deg);
 }

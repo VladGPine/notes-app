@@ -75,8 +75,6 @@ p {
   z-index: 100;
 }
 
-
-
 .delete-btn span {
   position: absolute;
   top: 50%;
@@ -85,6 +83,7 @@ p {
   height: 2px;
   background-color: whitesmoke;
   transform: rotate(135deg);
+  transition: all 0.2s ease-in-out;
 }
 
 .delete-btn span::before {
@@ -94,4 +93,12 @@ p {
   height: 2px;
   background-color: whitesmoke;
   transform: rotate(90deg);
+}
+
+.note-container:hover .delete-btn:hover {
+  background-color: rgb(255, 140, 140);
+}
+
+.note-container:hover .delete-btn:hover span {
+  transform: scale(1.2) rotate(45deg);
 }

@@ -8,6 +8,7 @@ import AddNote from './AddNote'
 class HomePage extends Component {
   constructor(props) {
     super(props);
+    this.addNewNote = this.addNewNote.bind(this);
     this.state = {
       notes: [
         {
@@ -34,10 +35,27 @@ class HomePage extends Component {
     }
   }
 
+
+  componentDidMount() {
+    localStorage.getItem(this.state.notes)
+  }
+
+  addNewNote(...note) {
+    const currNotes = this.state.notes;
+    currNotes.push({
+      id: currNotes.length + 1,
+      title: note.title,
+      content: note.content
+    })
+    this.setState({
+      notes: currNotes
+    })
+  }
+
   render() {
     return (
       <div>
-        <AddNote />
+        <AddNote addNewNote={this.addNewNote}/>
         <div className='main-content'>
           {
             this.state.notes.map(note => {

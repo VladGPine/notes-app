@@ -16,7 +16,7 @@ class HomePage extends Component {
         <div className='main-content'>
           {
             notes.map((note, id) => {
-              return <Note key={id} title={note.title} content={note.content} />
+              return <Note key={id} id={id} title={note.title} content={note.content} />
             })
           }
         </div>

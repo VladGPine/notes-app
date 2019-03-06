@@ -1,7 +1,9 @@
-const KEY = 'KEY';
+let KEY;
 
 class Store {
+  
   getNotes() {
+    
     let currNotes = localStorage.getItem(KEY);
     currNotes = JSON.parse(currNotes) || [];
     return currNotes;
@@ -10,12 +12,13 @@ class Store {
   addNote(note) {
     let currNotes = this.getNotes();
     currNotes.push(note);
-    localStorage.setItem(KEY, JSON.stringify(currNotes));
+    localStorage.setItem(KEY = note.id, JSON.stringify(currNotes));
   }
 
   deleteNote(note) {
     let currNotes = this.getNotes();
-    console.log(currNotes)
+    currNotes.splice(note.id, 1);
+    localStorage.removeItem(KEY = note.id, JSON.stringify(currNotes));
   }
 }
 
